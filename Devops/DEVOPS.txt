@@ -19,3 +19,13 @@ herramientas la mayoria de faces/actividades dentro del ciclo de vida.
 	 - Recordar cada cierto tiempo el punto anterior
 	 - Reprovar / Reconvenir conductas de los integrantes que tiendan a afectar o callar las opiniones o dudas de los demás miembros.
 ------------------------------------------------------------------------------------------------------------------------
+3.1) Herramientas que podrían compartir con los demás departamentos para una mejor colaboración.
+     En una empresa que trabajé anteriormente promocionamos las siguientes herramientas para los demás departamentos:
+	 Trello, Slack, Wiki, GanttProject (como alternativa a MS Project)
+3.2) Estructura para que exista una comunicación con todos los departamentos de la empresa: Pueden realizar un diagrama.
+     En dicha empresa también teniamos una estructura similar a la que planteó en el diagrama, era una reunión de líderes de equipos de
+	 los diferentes departamentos con los gerentes, esto para comunicar inquietudes, tomar decisiones, etc. Luego estas reuniones eran socializadas
+	 por los líderes a sus equipos, o antes de las reuniones de líderes, estos hacían reuniones previas para recoger observaciones de los equipos y 
+	 llevarlas a las reuniones de líderes.
+3.3) Mecanismo para la toma de decisiones (e.g. Votación electronica anonima, Un consejo de arquitectos, etc.)
+     - Votación manual dentro de las reuniones.
