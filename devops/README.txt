@@ -1,1 +1,0 @@
-Carpeta del tema DEVOPS

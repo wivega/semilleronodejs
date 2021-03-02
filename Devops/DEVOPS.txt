@@ -1,0 +1,4 @@
+Es un conjunto de actividades enfocadas a completar de una manera eficiente las etapas o ciclo de vida de los sistemas. 
+Todo esto enmarcado en el fuerte uso de herramientas para cada una de las etapas (planeación, desarrollo, pruebas, 
+entrega, supervisión). La ventaja de DevOps es buscar la forma de automatizar a través de dichas 
+herramientas la mayoria de faces/actividades dentro del ciclo de vida.
