@@ -1,4 +1,21 @@
+1) Concepto propio sobre DevOps
 Es un conjunto de actividades enfocadas a completar de una manera eficiente las etapas o ciclo de vida de los sistemas. 
 Todo esto enmarcado en el fuerte uso de herramientas para cada una de las etapas (planeación, desarrollo, pruebas, 
 entrega, supervisión). La ventaja de DevOps es buscar la forma de automatizar a través de dichas 
 herramientas la mayoria de faces/actividades dentro del ciclo de vida.
+------------------------------------------------------------------------------------------------------------------------
+2) Ideas para generar más empatía, confianza y seguridad psicológica en el equipo.
+2.1) Para generar más empatía:
+     - Actividades de integración (Deportes, salidas, reuniones sociales, etc)
+     - Contar historias personales (equilibrado, sin muchos detalles)
+     - Tener la disposición de ayudar a los compañeros de trabajo en actividades más dificiles 
+       de ejecutar en el equipo de trabajo.
+2.2) Para generar más confianza:
+     - Crear espacios para poder comunicar lo que nos afecta y/o límita en las tareas que realizamos.
+     - Fomentar en el equipo la autogestión y la autoregulación.
+     - Escoger herramientas de comunicación efectiva entre compañeros.
+2.3) Para generar seguridad psicológica:
+	 - En las reuniones de trabajo o grupo, siempre empezar con una frase que genere confianza a los miembros para que se expresen con total libertad
+	 - Recordar cada cierto tiempo el punto anterior
+	 - Reprovar / Reconvenir conductas de los integrantes que tiendan a afectar o callar las opiniones o dudas de los demás miembros.
+------------------------------------------------------------------------------------------------------------------------
