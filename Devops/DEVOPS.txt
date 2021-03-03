@@ -30,3 +30,9 @@ herramientas la mayoria de faces/actividades dentro del ciclo de vida.
 	 llevarlas a las reuniones de líderes.
 3.3) Mecanismo para la toma de decisiones (e.g. Votación electronica anonima, Un consejo de arquitectos, etc.)
      - Votación manual dentro de las reuniones.
+------------------------------------------------------------------------------------------------------------------------
+4) Realizar una plantilla del siguiente artefacto:
+   Documento de arquitectura
+   Rta/La planilla del documento de arquitectura se puede descargar de la siguiente dirección:
+   https://drive.google.com/file/d/1n_ITLLlPwjdBqOO-h9ir13Z-dAc4uxgV/view?usp=sharing
+   
