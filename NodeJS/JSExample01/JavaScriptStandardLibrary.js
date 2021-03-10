@@ -45,3 +45,63 @@ console.log(Math.max([...digitPrimes])); //7
 let product = 1;
 digitPrimes.forEach(prime => product *= prime);
 console.log(product);
+
+/**
+ * Representa un conjunto de valores conocidos como claves, donde cada clave
+ * tiene un otro valor asociado (o mapeado). Un Map o mapa es como una
+ * matriz, pero en lugar de usar un conjunto de numeros enteros secuenciales
+ * como claves, los mapas nos permiten usar valores arbitrarios como indices
+ */
+
+let mapOne = new Map(); // Empty map
+let mapTwo = new Map([  // Un nuevo mapa inicializado con claves de tipo string y mapeadas a 
+    ["one",1],          // numeros
+    ["two",2]
+]); 
+let mapThree = new Map(mapTwo); // Copia de un map
+let obj = {x:1,y:2}
+let mapFour = new Map(Object.entries(obj)); // Igual a new Map(["x",1],["y":1]);
+
+let mapFive = new Map();
+console.log(mapFive.size);
+
+mapFive.set("one",1);
+mapFive.set("two",2);
+console.log(mapFive.size);
+
+console.log(mapFive.get("two"));
+mapFive.set("one",true);
+console.log(mapFive.get("one"));
+console.log(mapFive.has("one"));
+console.log(mapFive.has(true)); // El has solo busca claves
+mapFive.delete("one");
+console.log(mapFive.size);
+mapFive.clear();
+console.log(mapFive.size);
+mapFive.set(["one",1]).set(["two",2]).set(["three"],3);
+console.log(mapFive.size);
+
+let mapSix = new Map();
+mapSix.set({},1);
+mapSix.set({},2);
+console.log(mapSix.size);
+console.log(mapSix.get({}));
+mapSix.set("one",undefined);
+console.log(mapSix.get("one"));
+console.log(mapSix.get("two"));
+let mapSeven = new Map();
+mapSeven.set(["one"],1).set(["two"],2).set(["three"],3);
+console.log(...[mapSeven]);
+for(let [key, value] of mapSeven){
+    console.log(`llave: ${key} valor: ${value}`);
+}
+
+console.log([...mapSeven.keys()]); //Traemos las claves
+
+console.log([...mapSeven.values()]); //Traemos los valores
+
+console.log([...mapSeven.entries()]);
+
+mapSeven.forEach((key,value)=>{
+    console.log(`${key}: ${value}`);
+});
