@@ -45,6 +45,7 @@ console.log(...mapaHeroes.values());
 console.log("------------------------------------------------------------");
 console.log("ESTA NO ME SIRVIÓ COMO PENSÉ :(");
 try {
+    console.log("mapaHeroes.get(\"Titanes\").set(4,'Starfire')");
     mapaHeroes.get("Titanes").set(4,'Starfire');
 } catch (error) {
     console.log(error);
@@ -52,8 +53,9 @@ try {
 
 console.log("------------------------------------------------------------");
 console.log("ESTA SI SIRVIÓ :) ");
+console.log("mapaHeroes.get(\"Marvel\").set(4,'Gambito');");
 mapaHeroes.get("Marvel").set(4,'Gambito');
-
+console.log(mapaHeroes.get("Marvel"));
 /*
 mapaHeroes.set();
 mapaHeroes.set();
