@@ -113,7 +113,7 @@ mapSeven.forEach((key,value)=>{
  * en la raiz. Se debe especificar la longitud de una matriz con tipo
  * cuando se crea, y esa longitud nunca puede cambiar.
  * Los elementos de una Typed Array siempre se inicializan a cero
- * cuando se crean
+ * cuando se crean.
  */
 let bytes = new Uint8Array(1024);    // 1024 bytes
 let matrix = new Float64Array(9);    // Matriz 3 x 3 
@@ -229,6 +229,7 @@ let pattern15 = /[^(]*/;  // Coincide con cero o más caracteres que no sean par
  *          arqumento, una cadena de reemplazo.
  * match:   Este método toma una expresión regular como único argurmento y devuelve una matriz que 
  *          contiene los resultados de la coincidencia.
+ * split:   Divide la cadena en una matriz utilizando el argumento como separador.
  */
 
 console.log("JavaScript".search(/script/ui));
@@ -272,7 +273,9 @@ console.log(protocol);
 console.log(host);
 console.log(path);
 
-let word = "Hola";
-let pattern16 = /[aeiouáéíóú]/gi;
+console.log("123,456,789".split(","));
 
-console.log(word.match(pattern16));
+console.log("1, 2, 3, \n4, 5".split(/\s*,\s*/));
+
+const htmlTag = /<([^>]+)>/;  // < followed by one or more non->, followed by >
+console.log("Testing<br/>1,2,3".split(htmlTag)); 
