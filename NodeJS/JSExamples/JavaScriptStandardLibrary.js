@@ -273,6 +273,6 @@ console.log(host);
 console.log(path);
 
 let word = "Hola";
-let pattern16 = /[aeiou]/gi;
+let pattern16 = /[aeiouáéíóú]/gi;
 
 console.log(word.match(pattern16));
