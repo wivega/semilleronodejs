@@ -158,7 +158,9 @@ let pattern2 = new RegExp("s$");  // $ metacaracter especial Bandera (flag en in
  * \d :  Cualquier dígito ASCII. Equivalente a [0-9].
  * \D :  Cualquier carácter que no sea un dígito ASCII. Equivalente a [^0-9].
  * [\b] : Un retroceso literal (caso especial).
- * 
+ * .  :  Cualquier carácter excepto nueva línea u otro terminador de línea Unicode. O, 
+ *      si la expresión regular usa la marca s, entonces un punto coincide con cualquier carácter, 
+ *      incluidos los terminadores de línea.
  * 
  */
 
@@ -225,6 +227,8 @@ let pattern15 = /[^(]*/;  // Coincide con cero o más caracteres que no sean par
  *          No admite búsquedas globales por lo tanto ignora la bandera g
  * replace: Lo que hace es una operación de búsqueda y reemplazo. Como primer argumento toma una expresión regular, y como segundo 
  *          arqumento, una cadena de reemplazo.
+ * match:   Este método toma una expresión regular como único argurmento y devuelve una matriz que 
+ *          contiene los resultados de la coincidencia.
  */
 
 console.log("JavaScript".search(/script/ui));
@@ -237,3 +241,38 @@ text = text.replace(/javascript/gi, "JavaScript");
 
 console.log(text);
 
+let times = "15 times 15 is 225";
+
+//Se tranforman los digitos en Hexagesimal
+console.log(times.replace(/\d+/gu, n => parseInt(n).toString(16))); 
+
+//Se tranforman los digitos en Binario
+console.log(times.replace(/\d+/gu, n => parseInt(n).toString(2))); 
+
+let text2 = "7 plus 8 equals 15";
+
+console.log(text2.match(/\d+/g));
+
+let url = /(\w+):\/\/([\w.]+)\/(\S*)/;
+let text3 = "Visit my blog at http://www.amazon.com/blogs";
+
+let match1 = text3.match(url);
+let fullUrl ,host, path, protocol;
+if(match1 !== null){
+    fullUrl = match1[0];
+    protocol = match1[1];
+    host = match1[2];
+    path = match1[3];
+}
+
+console.log(match1.index);
+
+console.log(fullUrl);
+console.log(protocol);
+console.log(host);
+console.log(path);
+
+let word = "Hola";
+let pattern16 = /[aeiou]/gi;
+
+console.log(word.match(pattern16));
