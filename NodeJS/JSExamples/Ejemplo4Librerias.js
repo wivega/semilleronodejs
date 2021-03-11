@@ -91,20 +91,22 @@ array2.forEach((idx)=> {
     console.log(idx);
 });
 //- Programe una expresión regular que de este texto  "'hola tu' tururú" obtenga ["'hola tu'", "'"]
-let wordPunto3 = "'hola tu' 12 tururú";  
-let regexp3= /\u0027{1}|hola tu/gu;
+let wordPunto3 = "'hola tu' tururú";  
+let regexp3= /\u0027{1}hola tu/u;
+regexp3= /([']).*\1/u;
 console.log(wordPunto3.match(regexp3));
 
 //- Programe una expresión regular que de este texto   "papa tururú" obtenga ["papa", "pa"]
 let wordPunto4 ="papa tururú";
 let regexp4= /pa/g;
+regexp4= /(pa){2}/;
 console.log(wordPunto4.match(regexp4));
 
 // - Programe una expresión regular que de este texto  "java es güay" obtenga ["java"]
 let wordPunto5 ="java es güay";
 let regexp5= /\w{4}/g;
 let regexp5a= /java/g;
-console.log(wordPunto5.match(regexp5));
+console.log(wordPunto5.match(regexp5a));
 //- Programe una expresión regular que de este texto  "11 millas 10 km" obtenga ["10"]
 let wordPunto6 ="11 millas 10 km";
 let regexp6a= /10/g;
