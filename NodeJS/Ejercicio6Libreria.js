@@ -30,6 +30,6 @@ function validarFecha(fecha){
     return new Date(fecha.setTime(fecha.getTime()+60000));
 }
 
-console.log(sumarPositivos(2, 3));
+console.log(sumarPositivos(2, -3));
 
 console.log(validarFecha(new Date(2022,1,1)));
