@@ -399,3 +399,11 @@ console.log(now.toTimeString()); //Transforma solo la hora
 console.log(now.toLocaleTimeString()); //Transforma solo la hora
 let time2 = Date.parse("2021/03/12");
 console.log(new Date(time2));
+
+/**
+ * Excepciones
+ * 
+ * Clase error
+ * Captura el estado de la pila de JS
+ * 
+ */
