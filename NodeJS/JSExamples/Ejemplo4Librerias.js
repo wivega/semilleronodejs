@@ -20,9 +20,14 @@
 
 //--------------------------------------------------------------------------------------------------------
 //- Cualquier carácter entre la B mayúscula y la Z mayúscula, excepto las vocales.
-let wordPunto1 = "BIFURCACION";
-let regexp1 = /[^AEIOU]/g;
+let wordPunto1 = "BIFURCEPSIACION";
+let wordPunto1a = "RCEPSIACION";
+//[B-D]|[F-H]|[J-N]|[P-T]|[V-Z]
+let regexp1 = /[^AEIOU]/gi;
+let regexp1m = /[B-D]|[F-H]|[J-N]|[P-T]|[V-Z]/g;
 console.log(wordPunto1.match(regexp1));
+console.log(wordPunto1a.match(regexp1m));
+
 /*- A veces nos intersa no sólo saber si una cadena cumple un determinado patrón, 
   sino extraer determinadas partes de él. Por ejemplo, si una fecha está en el 
   formato "27/11/2012" puede interesarnos extraer los números. Una expresión regular que 
@@ -30,7 +35,9 @@ console.log(wordPunto1.match(regexp1));
 */
 let wordPunto2 = "27/11/2012"; 
 let regexp2= /\d+/g;
+regexp2mejorada = /(\d{1,2})\/(\d{1,2})\/(\d{4})/;
 console.log(wordPunto2.match(regexp2));
+console.log(wordPunto2.match(regexp2mejorada));
 /*
 - Escoger un algoritmo excepto El algoritmo de la Criba de Eratóstenes y utilizar los typed arrays en 
   javascript. Del archivo pdf.
@@ -93,8 +100,8 @@ array2.forEach((idx)=> {
 //- Programe una expresión regular que de este texto  "'hola tu' tururú" obtenga ["'hola tu'", "'"]
 let wordPunto3 = "'hola tu' tururú";  
 let regexp3= /\u0027{1}hola tu/u;
-regexp3= /([']).*\1/u;
-console.log(wordPunto3.match(regexp3));
+regexp3m= /([']).*\1/u;
+console.log(wordPunto3.match(regexp3m));
 
 //- Programe una expresión regular que de este texto   "papa tururú" obtenga ["papa", "pa"]
 let wordPunto4 ="papa tururú";
