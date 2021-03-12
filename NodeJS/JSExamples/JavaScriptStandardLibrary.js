@@ -279,3 +279,123 @@ console.log("1, 2, 3, \n4, 5".split(/\s*,\s*/));
 
 const htmlTag = /<([^>]+)>/;  // < followed by one or more non->, followed by >
 console.log("Testing<br/>1,2,3".split(htmlTag)); 
+
+/*
+ * Dates and Times
+ * 
+ * Es una api para el manejo de fechas. 
+ * 
+ * La clase Date 
+ * Es la Api de Javascript para trabajar con fechas y horas.
+ * 
+ * UTC: tiempo universal coordinado:
+ * Es el principal estándar de tiempo por el cual el mundo regula los relojes.
+ * 
+ */
+
+let now = new Date();
+console.log(now);
+let epoch = new Date(0);
+console.log(epoch);
+let century = new Date(2100, //año 2100
+    0, //enero
+    1, //primero del mes
+    2,3,4,5); //02:03:04.005 hora local
+console.log(century);
+
+let century2 = new Date(2100, //año 2100
+    0, //enero
+    1, //primero del mes
+    ); //deja las horas en cero, medianoche
+console.log(century2);
+
+
+let century3 = Date.UTC(2100,0,1);
+console.log(century3);
+
+let century4 = new Date(Date.UTC(2100,0,1));
+console.log(century4);
+/* Metodos get  */
+console.log(now.getDay());
+console.log(now.getMonth());
+console.log(now.getFullYear());
+console.log(now.getHours());
+console.log(now.getMinutes());
+console.log(now.getSeconds());
+console.log(now.getMilliseconds());
+console.log(now.getTime());
+console.log(now.getTimezoneOffset());
+/* Metodos set  */
+console.log(now.setMonth(2));
+console.log(now.setFullYear(2021));
+console.log(now.setHours(10));
+console.log(now.setMinutes(51));
+console.log(now.setSeconds(23));
+console.log(now.setMilliseconds(90));
+console.log(now.setDate(12));
+//console.log(now.setTime(12873));
+console.log(now);
+/* Metodos get UTC  */
+console.log(now.getUTCDay());
+console.log(now.getUTCMonth());
+console.log(now.getUTCFullYear());
+console.log(now.getUTCHours());
+console.log(now.getUTCMinutes());
+console.log(now.getUTCSeconds());
+console.log(now.getUTCMilliseconds());
+console.log(now.getUTCDate());
+/* Metodos set UTC  */
+console.log(now.setUTCMonth(2));
+console.log(now.setUTCFullYear(2021));
+console.log(now.setUTCHours(10));
+console.log(now.setUTCMinutes(55));
+console.log(now.setUTCSeconds(34));
+console.log(now.setUTCMilliseconds(30));
+console.log(now.setUTCDate(12));
+
+console.log(now);
+
+/* las funciones milisegundos admiten 8.640.000.000.000.000 
+   Esto equivale a 270.000 años.
+*/
+now.setTime(now.getTime()+30000); // Esto significa colocar marcas de tiempo.
+console.log(now);
+
+/* Devolver marcas de tiempo.*/
+let startTime = Date.now();
+console.log(startTime);
+/*k=0;
+for(i=0;i<232;i++){
+    k++;
+}*/
+let endTime = Date.now();
+console.log(endTime);
+console.log(endTime-startTime);
+
+/* 
+ * Formato de fechas: 
+ *
+ * Convertir los objetos de fechas en cadena de caracteres.
+ * toString():  Tranforma el objeto fecha a texto usando la hora local.
+ * toUTCString(): Tranforma la fecha a texto usando el UTC.
+ * toISOString(): Transforma la fecha de formato ISO en texto.
+ * toLocaleString(): Transforma la fecha en texto pero en un horario local.
+*/
+
+let fechaTxt = now.toString();
+let fechaUTCTxt = now.toUTCString();
+let fechaISOTxt = now.toISOString();
+let fechaLocalTxt = now.toLocaleString();
+console.log(fechaTxt);
+console.log(fechaUTCTxt);
+console.log(fechaISOTxt); //Año-mes-dia hora:minutos:segundos.milisec. 
+                          //T: Separa la parte de la fecha de la hora
+                          //Z: Especifica UTC
+console.log(fechaLocalTxt);
+
+console.log(now.toDateString()); //Transforma solo fecha
+console.log(now.toLocaleDateString()); //Transforma solo fecha
+console.log(now.toTimeString()); //Transforma solo la hora
+console.log(now.toLocaleTimeString()); //Transforma solo la hora
+let time2 = Date.parse("2021/03/12");
+console.log(new Date(time2));
