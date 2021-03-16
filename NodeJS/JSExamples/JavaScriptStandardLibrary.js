@@ -401,9 +401,206 @@ let time2 = Date.parse("2021/03/12");
 console.log(new Date(time2));
 
 /**
- * Excepciones
- * 
- * Clase error
- * Captura el estado de la pila de JS
- * 
+ * Excepciones en javascript
+ * Los objetos error tienen dos propiedades, mensaje y el nombre
+ * Se pueden definir las propias subclases de error
+ * Siempre manejar las excepciones con trhow
+ *
  */
+
+ class HTTPError extends Error {
+    constructor(status,statusText,url){
+        super(`${status} ${statusText}: ${url}`);
+        this.status = status;
+        this.statusText = statusText;
+        this.url = url;
+    }
+
+    get name(){
+        return "HTTPError";
+
+    }
+}
+
+let error = new HTTPError(404,"Not Found", "http://example.com/");
+console.log(error.status);
+console.log(error.message);
+console.log(error.name);
+
+
+/**
+ * Serializaciones
+ * 
+ * Cuando se va a transmitir datos a través de la red, necesitamos convertir estructuras de
+ * datos en cadenas y para esto necesitamos serializar. La mejor forma para serializar 
+ * estructuras de datos es JSON.
+ * 
+ * Qué admite JSON:
+ * Cadenas, números primitivos (int, float, doubles), booleanos (true, false), matrices, y 
+ * objetos JS.
+ * 
+ * Qué NO admite JSON:
+ * Maps, Sets, Objetos de tipo RegExp, Dates y Typed Arrays
+ * 
+ * Funciones:
+ * 
+ * JSON.stringify() : Esta nos sirve para serializar objetos.
+ *                    Acepta tres parametros: 
+ *                   
+ * JSON.parse()     : Esta nos sirve para deserializar.
+ */
+
+let object = {
+    s:'',n: 0, a: [true, false, null]
+};
+
+let strSerialize= JSON.stringify(object);
+console.log(strSerialize);
+
+let strDeserialize = JSON.parse(strSerialize);
+console.log(strDeserialize);
+
+console.log(JSON.stringify(object, null, 2));
+console.log(JSON.parse(JSON.stringify(object, null, 2))); //El parse ignora los espacios en blanco.
+
+/**
+ * Api de Internacionalización
+ * 
+ * Esta Api nos permite formatear números, es decir formatearlos como importe monetario (moneda),
+ * porcentajes, etc.
+ * Esta api tambien tiene funciones para fechas.
+ */
+
+let euros = Intl.NumberFormat('es',{style:'currency',currency:'EUR'});
+console.log(euros.format(1200000));
+
+let data = [0.05, 0.75,1];
+let formatData = Intl.NumberFormat(undefined, {style:"percent", minimumFractionDigits:1, maximumFractionDigits:1}).format;
+console.log(data.map(formatData));
+
+//Números en árabe
+let arabic = Intl.NumberFormat("ar",{useGrouping:false}).format;
+console.log(arabic(123456789));
+
+//Números indios
+let indi = Intl.NumberFormat("hi-IN-u-nu-deva").format;
+console.log(indi(123456789));
+
+
+let date = new Date('2021-03-16T08:54:15Z');
+
+console.log(date);
+//Formato fecha EEUU
+console.log(Intl.DateTimeFormat("en-US").format(date));
+//Formato fecha Francia
+console.log(Intl.DateTimeFormat("fr-FR").format(date));
+//Formato fecha España
+console.log(Intl.DateTimeFormat("es-ES").format(date));
+
+//Deletrear dia de la semana y mes
+let opts = {weekDay:"long",month:"long",year:"numeric",day:"numeric"};
+console.log(Intl.DateTimeFormat("en-US",opts).format(date));
+//Formato de hora
+opts = {hour:"numeric", minute:"2-digit", hour12:true, hourCycle:"h11"};
+console.log(Intl.DateTimeFormat("en-US",opts).format(date));
+
+let opts2 = {year:"numeric", era:"narrow"};
+
+//Calendario Hebreo
+console.log(Intl.DateTimeFormat("en-u-ca-hebrew", opts2).format(date));
+
+//Calendario Budista
+console.log(Intl.DateTimeFormat("en-u-ca-buddhist", opts2).format(date));
+
+//Calendario Chino
+console.log(Intl.DateTimeFormat("en-u-ca-chinese", opts2).format(date));
+
+//Calendario Persa
+console.log(Intl.DateTimeFormat("en-u-ca-persian", opts2).format(date));
+
+/**
+ * Valores de la propiedad hourCycle: Como se gestiona la medianoche
+ * h11: Media noche = 0 y 11 de la noche 11pm
+ * h12: Media noche 12
+ * h23: Media noche 0 y 11 de la noche 23pm
+ * h24: Media noche 24
+ */
+
+/**
+ * API De URLs
+ * 
+ * Nos sirve para darle manejo a las Url. Tenemos una clase que nos permite tratar por parte los elementos de una URL
+ */
+
+let url2 = new URL("https://example.com:8000/path/name?q=term#fragment");
+console.log(url2); //Ruta completa
+console.log(url2.href); //Origin (Ruta base)
+console.log(url2.origin); //Protocolo
+console.log(url2.protocol); //Host
+console.log(url2.host); //Hostname
+console.log(url2.hostname); //Puerto
+console.log(url2.port); //Path name
+console.log(url2.pathname); //Url Search
+console.log(url2.search);
+console.log(url2.hash); //Url hash
+
+
+let url3 = new URL("ftp://admin:1337!@ftp.example.com/");
+console.log(url3);
+console.log(url3.href);
+console.log(url3.origin);
+console.log(url3.protocol);
+console.log(url3.host);
+console.log(url3.hostname);
+console.log(url3.port);
+console.log(url3.pathname);
+console.log(url3.search);
+console.log(url3.hash);
+console.log(url3.username);
+console.log(url3.password);
+
+let url4 = new URL("https://example.com");
+console.log(url4.pathname="api/search");
+console.log(url4.search="q=test");
+console.log(url4.toString());
+
+let url5 = new URL("https://example.com/search");
+console.log(url5.search);
+url5.searchParams.append("q","test")
+console.log(url5.search);
+url5.searchParams.set("q","equis");
+console.log(url5.search);
+console.log(url5.searchParams.get("q"));
+console.log(url5.searchParams.has("q"));
+url5.searchParams.append("o", "x");
+url5.searchParams.append("o", "s");
+console.log(url5.search);
+console.log(url5.searchParams.getAll("o"));
+url5.searchParams.sort();
+console.log(url5.searchParams.getAll("o"));
+console.log(url5.search);
+console.log([...url5.searchParams]);
+url5.searchParams.delete("q");
+
+
+/**
+ * Timers de JavaScript
+ * Son funciones que solicitan al navegador que invoque una función cada cierto tiempo.
+ * Funciona en todos los navegadores, y en NodeJS 
+ */
+
+/* setTimeout:
+setTimeout(()=>{console.log("Ready...");},1000);
+setTimeout(()=>{console.log("...Set...");},2000);
+setTimeout(()=>{console.log("Go!");},3000);
+*/
+
+//setInterval
+
+let clock  = setInterval(()=>{
+    console.clear();
+    console.log(new Date().toLocaleTimeString());
+},1000);
+
+
+setTimeout(()=>clearInterval(clock),10000);
