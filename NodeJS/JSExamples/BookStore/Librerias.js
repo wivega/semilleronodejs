@@ -10,7 +10,11 @@ class Book {
 }
 
 class Client {
-    constructor(id, cliName, cliLastName)
+    constructor(id, cliName, cliLastName){
+        this.id = id;
+        this.cliName = cliName;
+        this.cliLastName=cliLastName;
+    }
 }
 
 function randomIdGenerator(){
