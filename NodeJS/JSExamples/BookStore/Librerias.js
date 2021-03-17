@@ -106,3 +106,4 @@ for (myBook2 of BOOK_BD.keys()) {
     console.log(`Titulo: ${book.title} | Autor: ${book.author} | Valor (Euros): 
     ${book.priceToEuro()} |Fecha de creación: ${bookMd.getFechaCreacion(book)}`);
 }
+
