@@ -59,36 +59,36 @@ class RangeCurrent {
     }
 }
 
-let rangeCurrent = new RangeCurrent(1,10);
+let rangeCurrent = new RangeCurrent(1, 10);
 console.log(rangeCurrent.includes(3));
 console.log(rangeCurrent.includes(30));
 console.log(rangeCurrent.toString());
 console.log([...rangeCurrent]);
 
 class Span extends RangeCurrent {
-    constructor(start,length){
-        if(length >= 0){
-            super(start,start+length);
-        }else{
-            super(start+length,start);
+    constructor(start, length) {
+        if (length >= 0) {
+            super(start, start + length);
+        } else {
+            super(start + length, start);
         }
     }
 }
 
-let span1 = new Span(1,10);
+let span1 = new Span(1, 10);
 console.log(span1.includes(5));
 console.log(span1.toString());
 
 //Función como expresión
-let square = function(x){
-    return x*x;
+let square = function (x) {
+    return x * x;
 }
 console.log(square(6));
 
 //Clase como expresión
-let Square = class{
-    constructor(x){
-        this.area = x*x;
+let Square = class {
+    constructor(x) {
+        this.area = x * x;
     }
 }
 
@@ -96,3 +96,28 @@ console.log(new Square(4).area);
 
 let squareObject = new Square(7);
 console.log(squareObject.area);
+
+
+/**
+ * 
+ */
+
+class Cuadrado {
+    static calcularCuadrado(num) {
+        return num * num;
+    }
+
+    static texto = "Una palabrita";
+
+    metodoAbstracto() {
+        throw new error("Metodo abstracto");
+    }
+
+    #propiedadPrivada = 0;
+}
+
+let objCuadrado = new Cuadrado();
+//console.log(objCuadrado.calcularCuadrado(12));
+console.log(Cuadrado.calcularCuadrado(23));
+console.log(Cuadrado.texto);
+console.log(objCuadrado.propiedadPrivada);
