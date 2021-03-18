@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="Librerias.js"></script>
+    <title>Libreria</title>
+</head>
+
+<body>
+    <h2>La Libreria</h2>
+    <p>
+        Pequeño ejemplo de Liberia
+    </p>
+    <div>
+        <h3>Buscar Libro Interno</h3>
+        <input type="text" id="txtBuscador" />
+        <button id="btoBuscar">Buscar</button><br /><br />
+        <button id="btoTodos">Mostrar todos los libros</button>
+    </div><p></p>
+    <div>
+        <h3>Agregar Libro Interno</h3>
+        Id: <input type="text" id="txtId" /><br/>
+        Título: <input type="text" id="txtTitle" /><br/>
+        Autor: <input type="text" id="txtAutor" /><br/>
+        Precio: <input type="number" id="txtPrecio" /><br/>
+        <button id="btoCrear">Agregar</button><br /><br />
+    </div>
+    <p></p>
+    <div>
+        <h3>Estanteria</h3>
+        <div id="tblestanteria">dsfsdfsdf</div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    $('#tblestanteria').html(crearTablaEstanteriaFromText(null));
+    $(document).on('click', '#btoBuscar', function () {
+        if ($('#txtBuscador').val.length > 0) {
+            $('#tblestanteria').html(crearTablaEstanteriaFromText($('#txtBuscador').val()));
+        } else {
+            $('#tblestanteria').html(crearTablaEstanteriaFromText(null));
+        }
+    });
+
+    $(document).on('click', '#btoTodos', function () {
+        $('#tblestanteria').html(crearTablaEstanteriaFromText(null));
+    });
+
+    $(document).on('click', '#btoCrear', function () {
+        crearLibroInterno($('#txtId').val(),$('#txtTitle').val(),
+        $('#txtAutor').val(),$('#txtPrecio').val(),)
+        $('#txtId').val('');
+        $('#txtTitle').val('');
+        $('#txtAutor').val('');
+        $('#txtPrecio').val('0');
+        $('#tblestanteria').html(crearTablaEstanteriaFromText(null));
+    });
+
+</script>
+
+</html>

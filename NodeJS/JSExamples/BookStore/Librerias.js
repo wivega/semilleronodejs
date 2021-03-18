@@ -1,3 +1,10 @@
+/**
+ * Estanteria de libros.
+ * Se muestran los libros de la estantería
+ * Se agregan libros a la estanteria internamente
+ * Se buscan libros en la base de datos interna
+ */
+
 const URL_DB = "https://www.dbooks.org/";
 const IMG_PATH = "img/books/";
 
@@ -34,12 +41,16 @@ modules['Books.js'] = (function () {
 
     exports.bookFind = function (title) {
         let book = undefined;
+        let bookMap = new Map();
+        key = 1;
         for (myBook of BOOK_BD.values()) {
             if (myBook.title.toUpperCase().indexOf(title.toUpperCase()) >= 0) {
                 book = myBook;
+                bookMap.set(key, book);
+                key = key + 1;
             }
         }
-        return book;
+        return bookMap;
     };
 
     return exports;
@@ -101,9 +112,48 @@ bookMd.addBook(new Book(1491945176, '5 Unsung Tools of DevOps', 'Jonathan Thurma
 bookMd.addBook(new Book(5614276519, 'The NodeJS HandBook', 'Flavio Copes', 37900));
 bookMd.addBook(new Book(1491912472, 'Everything is Distributed', 'Courtney Nash', 65500));
 
-for (myBook2 of BOOK_BD.keys()) {
-    let book = BOOK_BD.get(myBook2);
-    console.log(`Titulo: ${book.title} | Autor: ${book.author} | Valor (Euros): 
-    ${book.priceToEuro()} |Fecha de creación: ${bookMd.getFechaCreacion(book)}`);
+
+//console.log(bookMd.bookFind("Azure"));
+ 
+
+function crearTablaEstanteriaFromText(text){
+    if(text===null){
+        return crearTablaEstanteriaFrom(BOOK_BD);
+    }else{
+        return crearTablaEstanteriaFrom(bookMd.bookFind(text));
+    }
 }
 
+function crearLibroInterno(id, title, author, price){
+    bookMd.addBook(new Book(id, title, author, price));
+}
+
+function crearTablaEstanteriaFrom(mapa) {
+    let strTable;
+
+    strTable = `<table border="1">
+    <thead>Libros actuales</thead>
+    <tr>
+        <th></th>
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th>Descripción</th>
+        <th>Precio</th>
+    </tr>
+    `
+    for (myBook2 of mapa.keys()) {
+        let book = mapa.get(myBook2);
+        strTable +=
+            `
+    <tr>
+        <td><img src="${book.img}" alt="${book.title}" height="125px" width="125px"></td>
+        <td>${book.title}</td>
+        <td>${book.author}</td>
+        <td><a target="_blank" href="${book.urlDescription}">ver descripción</a></td>
+        <td>${book.price}</td>
+    </tr>`
+    }
+    strTable +=
+        `</table>`;
+    return strTable;
+}
