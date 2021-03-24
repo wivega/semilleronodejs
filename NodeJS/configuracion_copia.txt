@@ -1,0 +1,2 @@
+Datos iniciales desde fs1.writeFileSync
+Datos desde fs.appendFileSync
