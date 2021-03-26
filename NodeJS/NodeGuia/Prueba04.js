@@ -15,19 +15,19 @@ console.log(x, y)
 //---------------------------------------------------------------------------------------------------------------------------------------------
 console.log('My %s has %d years', 'cat', 2)
 //---------------------------------------------------------------------------------------------------------------------------------------------
-const x = 1
-const y = 2
-const z = 3
+const x1 = 1
+const y1 = 2
+const z1 = 3
 console.count(
-'The value of x is ' + x + 
+'The value of x is ' + x1 + 
 ' and has been checked .. how many times?'
 )
 console.count(
-'The value of x is ' + x + 
+'The value of x is ' + x1 + 
 ' and has been checked .. how many times?'
 )
 console.count(
-'The value of y is ' + y + 
+'The value of y is ' + y1 + 
 ' and has been checked .. how many times?'
 )
 //---------------------------------------------------------------------------------------------------------------------------------------------
@@ -40,9 +40,9 @@ apples.forEach(fruit => {
 console.count(fruit)
 })
 //---------------------------------------------------------------------------------------------------------------------------------------------
-const function2 = () => console.trace()
-const function1 = () => function2()
-function1()
+const function2 = () => console.trace();
+const function1 = () => function2();
+function1();
 //---------------------------------------------------------------------------------------------------------------------------------------------
 const doSomething = () => {
 setTimeout(()=>{console.log('Here!');},1000);
