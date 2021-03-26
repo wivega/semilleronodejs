@@ -1,3 +1,4 @@
+//npm install progress
 const ProgressBar = require('progress')
 
 const bar = new ProgressBar(':bar', { total: 10 })
