@@ -28,7 +28,7 @@
  */
 
  // CommonJS
- const io1 = require("socket.io")(httpServer, { 
+ const io = require("socket.io")(httpServer, { 
     // ...
   }); 
 
@@ -37,12 +37,12 @@ import { createServer } from "http";
 import { Server } from "socket.io";
 
 const httpServer = createServer();
-const io2 = new Server(httpServer, {
+const io = new Server(httpServer, {
   // ...
 });
 
 /**
- * Tambien hay dos formas o modos de la instancia: Standalone o pegado a un servidor Http.
+ * Tambien hay dos formas o modos de la instancia: Standalone o atado a un servidor Http.
  * 
  */
 
@@ -65,5 +65,9 @@ httpServer.listen(3000);
 
 
 /**
- * 
+ *  Enviar y revibir datos con socket.io
+ *  La idea principal detrás de Socket.IO es que puede enviar y recibir cualquier evento que se quiera, con los datos que se desee. 
+ *  Cualquier objeto que pueda codificarse como JSON, y también se admiten datos binarios.
+ *  socket.on('evento',datos);
+ *  socket.emit('evento',datos);
  */

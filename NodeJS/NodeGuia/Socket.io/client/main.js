@@ -1,29 +1,36 @@
-var socket = io.connect('192.168.39.166:6677',{'forceNew':true});
+//Carga el objeto global io que viene del script: /socket.io/socket.io.js
+//y se conecta de manera predeterminada al servidor que publica el cliente
+let socket = io();
+//Para que no sea por defecto seria algo como:
+//let socket2  = io.connect('SERVER:PORT',{OPCIONES});
 
-socket.on('messages', function(data){
+//El socket recive por el evento 'mensajes', los datos y los manipula en el callback
+socket.on('mensajes', data => {
     console.log(data);
-    render(data);
+    publicarMensaje(data);
 });
 
-function render(data){
-    var html = data.map(function(message,index){
+function publicarMensaje(data) {
+    var html = data.map((mensaje, index) => {
         return (`
-        <div class="message">
-            <strong>${message.nickname}</strong> dice:
-            <p>${message.text}</p>
+        <div class="mensaje">
+            <strong>${mensaje.alias}</strong> dice:
+            <p>${mensaje.texto}</p>
         </div>
         `);
     }).join(' ');
 
-    document.getElementById('messages').innerHTML = html;
+    document.getElementById('mensajes').innerHTML = html;
 }
 
-function addMessage(e){
-    var message = {
-        nickname: document.getElementById('nickname').value,
-        text: document.getElementById('text').value
+function agregarMensaje(e) {
+    var mensaje = {
+        alias: document.getElementById('alias').value,
+        texto: document.getElementById('texto').value
     };
 
-    document.getElementById('nickname').style.display='none';
-    socket.emit('add-message', message);
+    document.getElementById('alias').style.display = 'none';
+    //Envia al servidor con el evento 'agregar-mensaje' el mensaje 
+    //(en este caso para que lo cargue al objeto que gestiona los mensajes del chat)
+    socket.emit('agregar-mensaje', mensaje);
 }
