@@ -16,3 +16,17 @@ const server = createServer((req, res) => {
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`)
 })
+
+//Ejemplo de polyfills
+Promise.resolve().finally();
+
+//Otro ejemplo de polyfills
+let timingpromise = new Promise((resolve, reject) => {
+  setTimeout(function() {
+     resolve("Promise is resolved!");
+  }, 1000);
+});
+
+timingpromise.then((msg) => {
+  console.log("%c"+msg, "font-size:25px;color:red;");
+});
