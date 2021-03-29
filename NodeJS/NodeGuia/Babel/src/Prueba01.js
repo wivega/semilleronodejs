@@ -5,7 +5,9 @@ const hostname = '127.0.0.1'
 //export PORT=3000
 //Windows
 //SET PORT=3000
-const port = process.env.PORT
+const port = process.env.PORT;
+
+[1, 2, 3].map((n) => n + 1);
 
 const server = createServer((req, res) => {
   res.statusCode = 200

@@ -4,14 +4,15 @@
       "@babel/env",
       {
         "targets": {
-          "ie": "10",
-          "firefox": "48",
-          "chrome": "50",
-          "safari": "11.1"
+          "firefox": "80",
+          "chrome": "80",
+          "safari": "13.1"
         },
         "useBuiltIns": "usage",
         "corejs": "3.6.5"
       }
-    ]
+    ],
+    ["@babel/preset-react"],
+    ["@babel/preset-typescript"]
   ]
 }

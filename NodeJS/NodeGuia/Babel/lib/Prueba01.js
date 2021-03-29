@@ -1,5 +1,7 @@
 "use strict";
 
+require("core-js/modules/es.array.map.js");
+
 require("core-js/modules/es.promise.finally.js");
 
 require("core-js/modules/es.promise.js");
@@ -13,7 +15,12 @@ var hostname = '127.0.0.1'; //Linux
 //Windows
 //SET PORT=3000
 
+
 var port = process.env.PORT;
+[1, 2, 3].map(function (n) {
+  return n + 1;
+});
+
 var server = (0, _http.createServer)(function (req, res) {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');

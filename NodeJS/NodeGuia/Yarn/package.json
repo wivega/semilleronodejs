@@ -1,0 +1,17 @@
+{
+  "name": "pruebayarn",
+  "version": "1.0.0",
+  "description": "Prueba Yarn",
+  "main": "index.js",
+  "author": "Wilman Vega",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {},
+  "dependencies": {
+    "express": "4.16.0"
+  },
+  "scripts": {
+    "test": "echo \"mensaje\"",
+    "dev": "node prueba.js"
+  }
+}

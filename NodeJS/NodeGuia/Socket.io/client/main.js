@@ -1,6 +1,7 @@
 //Carga el objeto global io que viene del script: /socket.io/socket.io.js
 //y se conecta de manera predeterminada al servidor que publica el cliente
 let socket = io();
+
 //Para que no sea por defecto seria algo como:
 //let socket2  = io.connect('SERVER:PORT',{OPCIONES});
 

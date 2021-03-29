@@ -1,0 +1,16 @@
+{
+  "name": "expressguia",
+  "version": "1.0.0",
+  "description": "Prueba de express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Wilman Vega",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^3.0.2",
+    "view": "^1.1.1"
+  }
+}

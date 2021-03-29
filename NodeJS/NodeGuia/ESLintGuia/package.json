@@ -1,0 +1,17 @@
+{
+  "name": "eslintguia",
+  "version": "1.0.0",
+  "description": "Guia aprendizaje esLint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wilmanvega",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-eslint": "^7.0.0",
+    "eslint-plugin-import": "^2.22.1"
+  }
+}
