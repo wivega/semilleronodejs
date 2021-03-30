@@ -1,3 +1,11 @@
 Librería LAS PRUEBAS
 Se implementa Sistema que gestiona las ventas de una libreria. 
 Tiene un pequeño inventario de libros y una base de clientes.
+
+REQ1 = Registrar un libro en el inventario, si es nuevo. Si ya existe un
+       ejemplar en la libreria, actualizar el numero de existencias de ese libro.
+REQ2  = Buscar un libro (o varios) en el inventario por las siguientes caracteristicas:
+       - Titulo de libro
+       - Nombre de autor
+       - Número de ISBN
+       - Año de publicación
