@@ -1,0 +1,3 @@
+Librería LAS PRUEBAS
+Se implementa Sistema que gestiona las ventas de una libreria. 
+Tiene un pequeño inventario de libros y una base de clientes.
