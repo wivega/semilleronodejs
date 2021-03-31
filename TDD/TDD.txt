@@ -24,7 +24,7 @@ REQUERIMIENTO 1B: Actualizar Un libro con los siguientes datos:
        - Usuario modifica
        - Fecha de modificación
 
-REQUERIMIENTO2: Buscar un libro en el inventario por los siguientes criterios de búsqueda:
+REQUERIMIENTO2: Obtener un libro en el inventario por los siguientes criterios de búsqueda:
        - Titulo de libro
        - Nombre de autor
        - Número de ISBN
