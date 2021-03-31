@@ -71,7 +71,7 @@ INICIO
 
        CONSULTAR BASE DATOS LIBRO (CRITERIO)
 
-       OBTENER DATOS LIBRO POR CRITERIO (
+       MOSTRAR DATOS LIBRO POR CRITERIO (
        , Titulo de libro
        , Nombre de autor
        , Número de ISBN
