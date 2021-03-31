@@ -35,3 +35,46 @@ REQUERIMIENTO2: Obtener un libro en el inventario por los siguientes criterios d
        - Número de ISBN
        - Año de publicación
        - número de items
+
+//SEUDO PRUEBAS
+REQ1A: REGISTRAR LIBRO EN INVENTARIO
+INICIO
+       LEER DATOS LIBRO:
+              (Titulo de libro
+       , Nombre de autor
+       , Número de ISBN
+       , Año de publicación
+       , Número de Item);
+
+       OBTENER fecha registro = HOY()
+       OBTENER Usuario = USUARIO_REGISTRO
+
+       GUARDAR LIBRO:
+              (Titulo de libro
+       , Nombre de autor
+       , Número de ISBN
+       , Año de publicación
+       , Número de Item
+       , fecha registro
+       , numero item + 1
+       , usuario);
+FIN
+
+REQ2: OBTENER LIBRO
+INICIO
+       LEER CRITERIO LIBRO (
+       ,Titulo de libro
+       , Nombre de autor
+       , Número de ISBN
+       , Año de publicación
+       , Número de Item )
+
+       CONSULTAR BASE DATOS LIBRO (CRITERIO)
+
+       OBTENER DATOS LIBRO POR CRITERIO (
+       , Titulo de libro
+       , Nombre de autor
+       , Número de ISBN
+       , Año de publicación
+       , número de items)
+FIN
