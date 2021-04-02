@@ -1,5 +1,5 @@
 const test = require("tape");
-const calculator = require("../calculator.js");
+const calculator = require("./calculator");
 
 test("Prueba de suma de dos enteros", t => {
     t.plan(1);
@@ -62,13 +62,13 @@ test("Prueba divide", t => {
     t.plan(1);
     t.equal(calculator.divide(4, 2), 2);
 });
-
+/*
 // ********  *****************
 test("Prueba match", t => {
     t.plan(1);
     t.match("xx","xx","Estado match");
 });
-
+*/
 
 
 
