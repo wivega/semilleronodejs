@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "discos",
+  "info": {
+    "name": "Discos"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "year": {
+      "type": "date"
+    }
+  }
+}
