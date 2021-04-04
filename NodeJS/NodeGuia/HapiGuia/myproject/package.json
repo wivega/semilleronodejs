@@ -1,12 +1,15 @@
 {
-  "name": "myproject",
+  "name": "hapiguia",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hapi: Guia de aprendizaje",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.1.2"
+  }
 }
