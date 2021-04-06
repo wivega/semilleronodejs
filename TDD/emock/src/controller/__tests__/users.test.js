@@ -1,5 +1,7 @@
+import axios from '../../__mocks__/axios.js';
 import { getUsers, getUserById } from '../user.js';
 
+const url = 'https://www.wilvec.com/users/';
 function foreach(items, callback){
     for(let index = 0; index < items.length; index++){
         callback(items[index]);
@@ -8,18 +10,18 @@ function foreach(items, callback){
 
 describe('Test Users', () => {
     it('Obtener lista de Usuarios', async () => {
-        const users = await getUsers();
+        const users = await getUsers(url);
         expect(users.length).toBeGreaterThan(0);
     });
 
     it('Obtener lista de Usuarios con promesa', done => {
-        getUsers().then(result => {
+        getUsers(url).then(result => {
             expect(result.length).toBeGreaterThan(0);
         });
     });
 
     it('Obtener un usuario', () => {
-        return getUserById(1).then(result =>
+        return getUserById(1,url).then(result =>
             expect(result.id).toBe(1)
         );
     });
@@ -27,9 +29,9 @@ describe('Test Users', () => {
     it('Obtener un error cuando el usuario no se encuentra', async () =>{
         try {
             expect.assertions(1);
-            const result = await getUserById();
+            const result = await getUserById(1,url);
         } catch (error) {
-            expect(error.message).toMatch("code 404");
+            expect(error.message).toMatch("Code 404");
         }
     });
 
@@ -50,4 +52,5 @@ describe('Test Users', () => {
         console.log(mockCallback);
         mockCallback.mockReturnValueOnce(2).mockReturnValueOnce('algo');
     })
+    
 });
