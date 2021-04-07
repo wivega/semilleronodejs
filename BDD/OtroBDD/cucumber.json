@@ -1,0 +1,124 @@
+[
+  {
+    "description": "    Para administrar el directorio \n    como desarrollador \n    quiero asegurarme que las operaciones crud a travez de las api rest funcionen bien",
+    "keyword": "Feature",
+    "name": "DirectoryService",
+    "line": 2,
+    "id": "directoryservice",
+    "tags": [
+      {
+        "name": "@directory-service",
+        "line": 1
+      }
+    ],
+    "uri": "src/features/directory.feature",
+    "elements": [
+      {
+        "id": "directoryservice;crear-un-contacto",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "crear un contacto",
+        "tags": [
+          {
+            "name": "@directory-service",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "un contacto {\"id\":99,\"name\":\"Dwayne Klocko\",\"email\":\"Rene30@hotmail.com\",\"phoneNumber\":\"1-876-420-9890\"}",
+            "match": {
+              "location": "src/steps/directory.js:6"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 0,
+              "error_message": "TypeError: Cannot set property 'request' of undefined\n    at World.<anonymous> (/home/wilman/semilleronodejs/BDD/OtroBDD/src/steps/directory.js:7:27)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "envio una solicitud POST a /directory",
+            "match": {
+              "location": "src/steps/directory.js:10"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "yo obtengo el codigo de respuesta 201",
+            "match": {
+              "location": "src/steps/directory.js:17"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      },
+      {
+        "id": "directoryservice;crear-un-contacto",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "crear un contacto",
+        "tags": [
+          {
+            "name": "@directory-service",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "un contacto {\"id\":7,\"name\":\"Ian Weimann DVM\",\"email\":\"Euna_Bergstrom@hotmail.com\",\"phoneNumber\":\"(297) 962-1879\"}",
+            "match": {
+              "location": "src/steps/directory.js:6"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 1000000,
+              "error_message": "TypeError: Cannot set property 'request' of undefined\n    at World.<anonymous> (/home/wilman/semilleronodejs/BDD/OtroBDD/src/steps/directory.js:7:27)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "envio una solicitud POST a /directory",
+            "match": {
+              "location": "src/steps/directory.js:10"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 10,
+            "name": "yo obtengo el codigo de respuesta 201",
+            "match": {
+              "location": "src/steps/directory.js:17"
+            },
+            "result": {
+              "status": "skipped"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,84 @@
+[
+  {
+    "description": "    Para administrar el directorio \n    como desarrollador \n    quiero asegurarme de que las operaciones crud a través de la api rest funcionen bien",
+    "keyword": "Feature",
+    "name": "Directory Service",
+    "line": 2,
+    "id": "directory-service",
+    "tags": [
+      {
+        "name": "@directory-service",
+        "line": 1
+      }
+    ],
+    "uri": "src/features/directory.feature",
+    "elements": [
+      {
+        "id": "directory-service;crear-un-contacto",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "Crear un contacto",
+        "tags": [
+          {
+            "name": "@directory-service",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "un contacto {\"id\":99,\"name\":\"Dwayne Klocko\",\"email\":\"Rene30@hotmail.com\",\"phoneNumber\":\"1-876-420-9890\"}",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "envio una solicitud POST a /directory",
+            "result": {
+              "status": "undefined"
+            }
+          }
+        ]
+      },
+      {
+        "id": "directory-service;crear-un-contacto",
+        "keyword": "Scenario",
+        "line": 15,
+        "name": "Crear un contacto",
+        "tags": [
+          {
+            "name": "@directory-service",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 8,
+            "name": "un contacto {\"id\":7,\"name\":\"Ian Weimann DVM\",\"email\":\"Euna_Bergstrom@hotmail.com\",\"phoneNumber\":\"(297) 962-1879\"}",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 9,
+            "name": "envio una solicitud POST a /directory",
+            "result": {
+              "status": "undefined"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

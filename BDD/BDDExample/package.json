@@ -1,0 +1,23 @@
+{
+  "name": "bddexzample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/cucumber-js -f json:cucumber.json src/features/ -r src/step/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "dotenv-flow": "^3.2.0",
+    "faker": "^5.1.0",
+    "lodash": "^4.17.20",
+    "yarn": "^1.22.10"
+  },
+  "devDependencies": {
+    "cucumber": "^6.0.5",
+    "cucumber-html-reporter": "^5.2.0"
+  }
+}
