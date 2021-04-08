@@ -11,7 +11,7 @@
         "line": 1
       }
     ],
-    "uri": "src\\features\\directory.feature",
+    "uri": "src/features/directory.feature",
     "elements": [
       {
         "id": "directoryservice;crear-un-contacto",
@@ -32,11 +32,11 @@
             "line": 8,
             "name": "un contacto {\"id\":99,\"name\":\"Dwayne Klocko\",\"email\":\"Rene30@hotmail.com\",\"phoneNumber\":\"1-876-420-9890\"}",
             "match": {
-              "location": "src\\steps\\directory.js:8"
+              "location": "src/steps/directory.js:8"
             },
             "result": {
               "status": "passed",
-              "duration": 1000000
+              "duration": 5000000
             }
           },
           {
@@ -45,11 +45,12 @@
             "line": 9,
             "name": "envio una solicitud POST a /directory",
             "match": {
-              "location": "src\\steps\\directory.js:12"
+              "location": "src/steps/directory.js:12"
             },
             "result": {
-              "status": "passed",
-              "duration": 56000000
+              "status": "failed",
+              "duration": 52000000,
+              "error_message": "Error: Request failed with status code 500\n    at createError (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/core/createError.js:16:15)\n    at settle (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/core/settle.js:17:12)\n    at IncomingMessage.handleStreamEnd (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/adapters/http.js:244:11)\n    at IncomingMessage.emit (events.js:327:22)\n    at endReadableNT (internal/streams/readable.js:1327:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)"
             }
           },
           {
@@ -58,11 +59,10 @@
             "line": 10,
             "name": "yo obtengo el codigo de respuesta 201",
             "match": {
-              "location": "src\\steps\\directory.js:17"
+              "location": "src/steps/directory.js:17"
             },
             "result": {
-              "status": "passed",
-              "duration": 1000000
+              "status": "skipped"
             }
           }
         ]
@@ -86,7 +86,7 @@
             "line": 8,
             "name": "un contacto {\"id\":7,\"name\":\"Ian Weimann DVM\",\"email\":\"Euna_Bergstrom@hotmail.com\",\"phoneNumber\":\"(297) 962-1879\"}",
             "match": {
-              "location": "src\\steps\\directory.js:8"
+              "location": "src/steps/directory.js:8"
             },
             "result": {
               "status": "passed",
@@ -99,11 +99,12 @@
             "line": 9,
             "name": "envio una solicitud POST a /directory",
             "match": {
-              "location": "src\\steps\\directory.js:12"
+              "location": "src/steps/directory.js:12"
             },
             "result": {
-              "status": "passed",
-              "duration": 26000000
+              "status": "failed",
+              "duration": 16000000,
+              "error_message": "Error: Request failed with status code 500\n    at createError (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/core/createError.js:16:15)\n    at settle (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/core/settle.js:17:12)\n    at IncomingMessage.handleStreamEnd (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/adapters/http.js:244:11)\n    at IncomingMessage.emit (events.js:327:22)\n    at endReadableNT (internal/streams/readable.js:1327:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)"
             }
           },
           {
@@ -112,11 +113,10 @@
             "line": 10,
             "name": "yo obtengo el codigo de respuesta 201",
             "match": {
-              "location": "src\\steps\\directory.js:17"
+              "location": "src/steps/directory.js:17"
             },
             "result": {
-              "status": "passed",
-              "duration": 0
+              "status": "skipped"
             }
           }
         ]
@@ -140,7 +140,7 @@
             "line": 19,
             "name": "The contact with 99 exist",
             "match": {
-              "location": "src\\steps\\directory.js:25"
+              "location": "src/steps/directory.js:25"
             },
             "result": {
               "status": "passed",
@@ -153,11 +153,11 @@
             "line": 20,
             "name": "I send GET request to /directory",
             "match": {
-              "location": "src\\steps\\directory.js:29"
+              "location": "src/steps/directory.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 56000000
+              "duration": 51000000
             }
           },
           {
@@ -166,12 +166,12 @@
             "line": 21,
             "name": "I receive {\"id\":99,\"name\":\"Dwayne Klocko\",\"email\":\"Rene30@hotmail.com\",\"phoneNumber\":\"1-876-420-9890\",\"secondaryPhoneNumber\": \"(914) 249-3519\"}",
             "match": {
-              "location": "src\\steps\\directory.js:35"
+              "location": "src/steps/directory.js:35"
             },
             "result": {
               "status": "failed",
               "duration": 3000000,
-              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n\u001b[32m+ actual\u001b[39m \u001b[31m- expected\u001b[39m\n\n  {\n    email: 'Rene30@hotmail.com',\n    id: 99,\n    name: 'Dwayne Klocko',\n    phoneNumber: '1-876-420-9890',\n\u001b[31m-\u001b[39m   secondaryPhoneNumber: '(914) 249-3519'\n  }\n    + expected - actual\n\n       \"email\": \"Rene30@hotmail.com\"\n       \"id\": 99\n       \"name\": \"Dwayne Klocko\"\n       \"phoneNumber\": \"1-876-420-9890\"\n    +  \"secondaryPhoneNumber\": \"(914) 249-3519\"\n     }\n\n    at CustomWorld.<anonymous> (C:\\Users\\eddiaz\\Documents\\GitHub\\NodeJS\\BDD\\src\\steps\\directory.js:37:10)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n\u001b[32m+ actual\u001b[39m \u001b[31m- expected\u001b[39m\n\n  {\n    email: 'Rene30@hotmail.com',\n    id: 99,\n    name: 'Dwayne Klocko',\n    phoneNumber: '1-876-420-9890',\n\u001b[31m-\u001b[39m   secondaryPhoneNumber: '(914) 249-3519'\n  }\n    + expected - actual\n\n       \"email\": \"Rene30@hotmail.com\"\n       \"id\": 99\n       \"name\": \"Dwayne Klocko\"\n       \"phoneNumber\": \"1-876-420-9890\"\n    +  \"secondaryPhoneNumber\": \"(914) 249-3519\"\n     }\n\n    at CustomWorld.<anonymous> (/home/wilman/semilleronodejs/BDD/BDDEdgar/src/steps/directory.js:37:10)"
             }
           }
         ]
@@ -195,7 +195,7 @@
             "line": 19,
             "name": "The contact with 7 exist",
             "match": {
-              "location": "src\\steps\\directory.js:25"
+              "location": "src/steps/directory.js:25"
             },
             "result": {
               "status": "passed",
@@ -208,11 +208,11 @@
             "line": 20,
             "name": "I send GET request to /directory",
             "match": {
-              "location": "src\\steps\\directory.js:29"
+              "location": "src/steps/directory.js:29"
             },
             "result": {
               "status": "passed",
-              "duration": 56000000
+              "duration": 26000000
             }
           },
           {
@@ -221,12 +221,12 @@
             "line": 21,
             "name": "I receive {\"id\":7,\"name\":\"Ian Weimann DVM\",\"email\":\"Euna_Bergstrom@hotmail.com\",\"phoneNumber\":\"(297) 962-1879\", \"secondaryPhoneNumber\": \"788.323.7782\"}",
             "match": {
-              "location": "src\\steps\\directory.js:35"
+              "location": "src/steps/directory.js:35"
             },
             "result": {
               "status": "failed",
               "duration": 2000000,
-              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n\u001b[32m+ actual\u001b[39m \u001b[31m- expected\u001b[39m\n\n  {\n    email: 'Euna_Bergstrom@hotmail.com',\n    id: 7,\n    name: 'Ian Weimann DVM',\n    phoneNumber: '(297) 962-1879',\n\u001b[31m-\u001b[39m   secondaryPhoneNumber: '788.323.7782'\n  }\n    + expected - actual\n\n       \"email\": \"Euna_Bergstrom@hotmail.com\"\n       \"id\": 7\n       \"name\": \"Ian Weimann DVM\"\n       \"phoneNumber\": \"(297) 962-1879\"\n    +  \"secondaryPhoneNumber\": \"788.323.7782\"\n     }\n\n    at CustomWorld.<anonymous> (C:\\Users\\eddiaz\\Documents\\GitHub\\NodeJS\\BDD\\src\\steps\\directory.js:37:10)"
+              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n\u001b[32m+ actual\u001b[39m \u001b[31m- expected\u001b[39m\n\n  {\n    email: 'Euna_Bergstrom@hotmail.com',\n    id: 7,\n    name: 'Ian Weimann DVM',\n    phoneNumber: '(297) 962-1879',\n\u001b[31m-\u001b[39m   secondaryPhoneNumber: '788.323.7782'\n  }\n    + expected - actual\n\n       \"email\": \"Euna_Bergstrom@hotmail.com\"\n       \"id\": 7\n       \"name\": \"Ian Weimann DVM\"\n       \"phoneNumber\": \"(297) 962-1879\"\n    +  \"secondaryPhoneNumber\": \"788.323.7782\"\n     }\n\n    at CustomWorld.<anonymous> (/home/wilman/semilleronodejs/BDD/BDDEdgar/src/steps/directory.js:37:10)"
             }
           }
         ]

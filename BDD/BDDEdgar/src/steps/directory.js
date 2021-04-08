@@ -11,7 +11,7 @@ Given('un contacto {}', (x) => {
 
 When('envio una solicitud POST a {}', async (path) => {
   //console.log(`${process.env.SERVICE_URL}${path}`);
-  response = await restHelper.postData(`http://localhost:80${path}`, result);
+  response = await restHelper.postData(`http://localhost:3000${path}`, result);
 });
 
 Then('yo obtengo el codigo de respuesta {int}', async (code) => {
@@ -28,7 +28,7 @@ Given('The contact with {int} exist', (x) => {
 
 When('I send GET request to {}', async (path) => {
   //console.log(`${process.env.SERVICE_URL}${path}`);
-  response = await restHelper.getData(`http://localhost:80${path}/${id}`);
+  response = await restHelper.getData(`http://localhost:3000${path}/${id}`);
   console.log(response);
 });
 
