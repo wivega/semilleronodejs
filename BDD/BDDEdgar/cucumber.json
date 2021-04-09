@@ -36,7 +36,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5000000
+              "duration": 1000000
             }
           },
           {
@@ -48,9 +48,8 @@
               "location": "src/steps/directory.js:12"
             },
             "result": {
-              "status": "failed",
-              "duration": 52000000,
-              "error_message": "Error: Request failed with status code 500\n    at createError (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/core/createError.js:16:15)\n    at settle (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/core/settle.js:17:12)\n    at IncomingMessage.handleStreamEnd (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/adapters/http.js:244:11)\n    at IncomingMessage.emit (events.js:327:22)\n    at endReadableNT (internal/streams/readable.js:1327:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)"
+              "status": "passed",
+              "duration": 48000000
             }
           },
           {
@@ -62,7 +61,8 @@
               "location": "src/steps/directory.js:17"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 19000000
             }
           }
         ]
@@ -90,7 +90,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 0
+              "duration": 1000000
             }
           },
           {
@@ -102,9 +102,8 @@
               "location": "src/steps/directory.js:12"
             },
             "result": {
-              "status": "failed",
-              "duration": 16000000,
-              "error_message": "Error: Request failed with status code 500\n    at createError (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/core/createError.js:16:15)\n    at settle (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/core/settle.js:17:12)\n    at IncomingMessage.handleStreamEnd (/home/wilman/semilleronodejs/BDD/BDDEdgar/node_modules/axios/lib/adapters/http.js:244:11)\n    at IncomingMessage.emit (events.js:327:22)\n    at endReadableNT (internal/streams/readable.js:1327:12)\n    at processTicksAndRejections (internal/process/task_queues.js:80:21)"
+              "status": "passed",
+              "duration": 21000000
             }
           },
           {
@@ -116,7 +115,8 @@
               "location": "src/steps/directory.js:17"
             },
             "result": {
-              "status": "skipped"
+              "status": "passed",
+              "duration": 0
             }
           }
         ]
@@ -157,7 +157,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 51000000
+              "duration": 36000000
             }
           },
           {
@@ -170,8 +170,8 @@
             },
             "result": {
               "status": "failed",
-              "duration": 3000000,
-              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n\u001b[32m+ actual\u001b[39m \u001b[31m- expected\u001b[39m\n\n  {\n    email: 'Rene30@hotmail.com',\n    id: 99,\n    name: 'Dwayne Klocko',\n    phoneNumber: '1-876-420-9890',\n\u001b[31m-\u001b[39m   secondaryPhoneNumber: '(914) 249-3519'\n  }\n    + expected - actual\n\n       \"email\": \"Rene30@hotmail.com\"\n       \"id\": 99\n       \"name\": \"Dwayne Klocko\"\n       \"phoneNumber\": \"1-876-420-9890\"\n    +  \"secondaryPhoneNumber\": \"(914) 249-3519\"\n     }\n\n    at CustomWorld.<anonymous> (/home/wilman/semilleronodejs/BDD/BDDEdgar/src/steps/directory.js:37:10)"
+              "duration": 8000000,
+              "error_message": "AssertionError [ERR_ASSERTION]: Input A expected to strictly deep-equal input B:\n\u001b[32m+ expected\u001b[39m \u001b[31m- actual\u001b[39m\n\n  {\n    email: 'Rene30@hotmail.com',\n    id: 99,\n    name: 'Dwayne Klocko',\n\u001b[31m-\u001b[39m   phoneNumber: '1-876-420-9890'\n\u001b[32m+\u001b[39m   phoneNumber: '1-876-420-9890',\n\u001b[32m+\u001b[39m   secondaryPhoneNumber: '(914) 249-3519'\n  }\n    + expected - actual\n\n       \"email\": \"Rene30@hotmail.com\"\n       \"id\": 99\n       \"name\": \"Dwayne Klocko\"\n       \"phoneNumber\": \"1-876-420-9890\"\n    +  \"secondaryPhoneNumber\": \"(914) 249-3519\"\n     }\n\n    at CustomWorld.Then (/home/wilman/semilleronodejs/BDD/BDDEdgar/src/steps/directory.js:37:10)"
             }
           }
         ]
@@ -212,7 +212,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 26000000
+              "duration": 16000000
             }
           },
           {
@@ -225,8 +225,8 @@
             },
             "result": {
               "status": "failed",
-              "duration": 2000000,
-              "error_message": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n\u001b[32m+ actual\u001b[39m \u001b[31m- expected\u001b[39m\n\n  {\n    email: 'Euna_Bergstrom@hotmail.com',\n    id: 7,\n    name: 'Ian Weimann DVM',\n    phoneNumber: '(297) 962-1879',\n\u001b[31m-\u001b[39m   secondaryPhoneNumber: '788.323.7782'\n  }\n    + expected - actual\n\n       \"email\": \"Euna_Bergstrom@hotmail.com\"\n       \"id\": 7\n       \"name\": \"Ian Weimann DVM\"\n       \"phoneNumber\": \"(297) 962-1879\"\n    +  \"secondaryPhoneNumber\": \"788.323.7782\"\n     }\n\n    at CustomWorld.<anonymous> (/home/wilman/semilleronodejs/BDD/BDDEdgar/src/steps/directory.js:37:10)"
+              "duration": 3000000,
+              "error_message": "AssertionError [ERR_ASSERTION]: Input A expected to strictly deep-equal input B:\n\u001b[32m+ expected\u001b[39m \u001b[31m- actual\u001b[39m\n\n  {\n    email: 'Euna_Bergstrom@hotmail.com',\n    id: 7,\n    name: 'Ian Weimann DVM',\n\u001b[31m-\u001b[39m   phoneNumber: '(297) 962-1879'\n\u001b[32m+\u001b[39m   phoneNumber: '(297) 962-1879',\n\u001b[32m+\u001b[39m   secondaryPhoneNumber: '788.323.7782'\n  }\n    + expected - actual\n\n       \"email\": \"Euna_Bergstrom@hotmail.com\"\n       \"id\": 7\n       \"name\": \"Ian Weimann DVM\"\n       \"phoneNumber\": \"(297) 962-1879\"\n    +  \"secondaryPhoneNumber\": \"788.323.7782\"\n     }\n\n    at CustomWorld.Then (/home/wilman/semilleronodejs/BDD/BDDEdgar/src/steps/directory.js:37:10)"
             }
           }
         ]
