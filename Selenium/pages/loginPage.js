@@ -1,6 +1,5 @@
 'use strict'
 const BasePage = require('./basePage')
-var basePage = require('./basePage')
 
 const PAGE_IDENTIFIER = '#login-container'
 const PAGE_USEREMAIL_TEXTBOX = '#emailId'
@@ -12,7 +11,7 @@ const PAGE_PASSWORD_LABEL = '#password-label'
 
 class LoginPage extends BasePage {
 
-    constructor(pageLoaded){
+    constructor(driver){
         super(driver, PAGE_IDENTIFIER)
     }
 

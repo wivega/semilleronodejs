@@ -1,30 +1,37 @@
-const assert = require('chai').assert
-const Then = require('cucumber')
-const And = Then
-const loginPage = require('../pages/loginPage')
-const timeouts = require('../utils/constants')
+const assert = require('chai').assert;
+const Then = require('cucumber').Then;
+const And = Then;
+const LoginPage = require('../pages/loginPage');
+const timeOut = require('../utils/constans');
+const { Builder, Bay, Key } = require('selenium-webdriver');
+const driver = new Builder().forBrowser('chrome').build();
 
-Then(' yo debería ver una caja de texto para ingresar mi email',async ()=> {
-    const loginPage = new LoginPage(this.driver);
-    await this.driver.wait(async ()=> await loginPage.getUserEmailTextBox(), timeouts.STEP_TIMEOUT.TIMEOUT);
+Then('yo deberia ver una caja de texto para ingresar a mi email', async () => {
+    //console.log(driver);
+    const loginPage = new LoginPage(driver);
+    await driver.wait(async () => await loginPage.getUserEmailTextBox(), timeOut.STEP_TIMEOUTS.TIMEOUT);
 });
-And(' yo debería ver una caja de texto para ingresar la password',async ()=> {
-    const loginPage = new LoginPage(this.driver);
-    await this.driver.wait(async ()=> await loginPage.getUserPasswordTextBox(), timeouts.STEP_TIMEOUT.TIMEOUT);
+
+And('yo deberia ver una caja de texto para ingresar el password', async () => {
+    const loginPage = new LoginPage(driver);
+    await driver.wait(async () => await loginPage.getUserPasswordTextBox(), timeOut.STEP_TIMEOUTS.TIMEOUT);
 });
-And(' yo debería ver un botón sign',async ()=> {
-    const loginPage = new LoginPage(this.driver);
-    await this.driver.wait(async ()=> await loginPage.getLoginButton(), timeouts.STEP_TIMEOUT.TIMEOUT);
+
+And('yo deberia ver un boton para sign', async () => {
+    const loginPage = new LoginPage(driver);
+    await driver.wait(async () => await loginPage.getSignInButton(), timeOut.STEP_TIMEOUTS.TIMEOUT);
 });
-And(' yo debería ver un login header con el texto {string}',async expectedText => {
-    const loginPage = new LoginPage(this.driver);
-    const header = await loginPage.getLoginHeader();
-    const headerText =await header.getText();
+
+And('yo deberia ver un login header con el texto {string}', async expectedText => {
+    const loginPage = new LoginPage(driver);
+    const header = await loginPage.getLoginHead();
+    const headerText = await header.getText();
     assert.strictEqual(headerText, expectedText);
-}, timeouts.STEP_TIMEOUT.TIMEOUT);
-And('yo debería ver un label de dirección email con el texto',async expectedText => {
-    const loginPage = new LoginPage(this.driver);
+}, timeOut.STEP_TIMEOUTS.TIMEOUT);
+
+And('yo deberia ver un label de direccion email con el texto {string}', async expectedText => {
+    const loginPage = new LoginPage(driver);
     const emailLabel = await loginPage.getEmailLabel();
-    const emailLabelText =await header.getText();
+    const emailLabelText = await emailLabel.getText();
     assert.strictEqual(emailLabelText, expectedText);
-}, timeouts.STEP_TIMEOUT.TIMEOUT);
+}, timeOut.STEP_TIMEOUTS.TIMEOUT);

@@ -1,10 +1,12 @@
 const webDriver = require('selenium-webdriver');
 const using = webDriver.By;
+const {Builder, By, Key} = require('selenium-webdriver');
+const driver = new Builder().forBrowser('chrome').build();
 
 class BasePage {
 
     constructor(driver, selector = ''){
-        this.webDriver = driver;
+        this.driver = driver;
         this.selector = selector;
     }
 
