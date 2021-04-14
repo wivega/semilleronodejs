@@ -1,0 +1,101 @@
+[
+  {
+    "description": "    Como usuario del banco online\n    yo quiero visitar el sitio web del banco\n    para yo poder hacer login y entrar a mi cuenta",
+    "keyword": "Feature",
+    "name": "Login Banco",
+    "line": 2,
+    "id": "login-banco",
+    "tags": [
+      {
+        "name": "@LoginBanco",
+        "line": 1
+      }
+    ],
+    "uri": "test/features/login.feature",
+    "elements": [
+      {
+        "id": "login-banco;visitar-la-pagina-de-login",
+        "keyword": "Scenario",
+        "line": 8,
+        "name": "Visitar la pagina de login",
+        "tags": [
+          {
+            "name": "@LoginBanco",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "match": {
+              "location": "utils/hooks.js:22"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 10000000,
+              "error_message": "TypeError: Cannot read property 'TIMEOUT' of undefined\n    at World.Before (/home/wilman/semilleronodejs/Selenium/utils/hooks.js:25:46)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "yo debería ver una caja de texto para ingresar mi email",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 10,
+            "name": "yo debería ver una caja de texto para ingresar la password",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "yo debería ver un botón sign",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "yo debería ver un login header con el texto \"Login Banco Online\"",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "yo debería ver un label de dirección email con el texto email address",
+            "result": {
+              "status": "undefined"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "match": {
+              "location": "utils/hooks.js:35"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

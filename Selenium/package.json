@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node ./src/index.js",
-    "test": "./node_modules/.bin/cucumber-js test/features --require ./utils --require ./steps --world-parameters {\\\"browserName\\\":\\\"chrome\\\"} --format json:test/results/chrome.json"
+    "test": "./node_modules/.bin/cucumber-js test/features --require ./utils --require ./steps --world-parameters {\\\"browserName\\\":\\\"chrome\\\"} --format json:tests/results/chrome.json"
   },
   "keywords": [],
   "author": "",

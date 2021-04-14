@@ -2,7 +2,7 @@ const assert = require('chai').assert;
 const Then = require('cucumber').Then;
 const And = Then;
 const LoginPage = require('../pages/loginPage');
-const timeOut = require('../utils/constans');
+const timeOut = require('../utils/constants');
 const { Builder, Bay, Key } = require('selenium-webdriver');
 const driver = new Builder().forBrowser('chrome').build();
 

@@ -1,6 +1,6 @@
 'use strict';
 const CONSTANTS = {
-    STEP_TIMEOUT : {
+    STEP_TIMEOUTS : {
         TIMEOUT: 3000
     },
     HOOK_TIMEOUTS : {

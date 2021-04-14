@@ -4,7 +4,7 @@ const webDriver = require('selenium-webdriver');
 const CONSTANTS = require('../utils/constants');
 const {before, After, setDefaultTimeout, Status, Before} = require('cucumber');
 
-const RESULT_FOLDER_PATH = '../tests/results';
+const RESULT_FOLDER_PATH = './tests/results';
 const APP_URL = 'http://localhost:9294/login'; 
 
 const EVENTS = {
