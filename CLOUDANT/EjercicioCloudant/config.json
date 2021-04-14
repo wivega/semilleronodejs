@@ -1,0 +1,16 @@
+{
+    "BaseDatos": {
+        "credentials": {
+            "apikey": "oeVk63N3Ch77nlV0pwDSumBaccNAJSs-zMqGmq-6BLM0",
+            "host": "9ee6246f-a67f-4c8b-84aa-243c5fb79508-bluemix.cloudantnosqldb.appdomain.cloud",
+            "iam_apikey_description": "Auto generated apikey during resource-key operation for Instance - crn:v1:bluemix:public:cloudantnosqldb:us-south:a/9c6dcf74eeb849fd8480ce653e4084f4:9c144698-0576-45b3-8e7a-bd4e35918a83::",
+            "iam_apikey_name": "auto-generated-apikey-e2c1329e-fd81-4846-9b22-ce5a501bd458",
+            "iam_role_crn": "crn:v1:bluemix:public:iam::::serviceRole:Manager",
+            "iam_serviceid_crn": "crn:v1:bluemix:public:iam-identity::a/9c6dcf74eeb849fd8480ce653e4084f4::serviceid:ServiceId-ff5ba74a-d08c-4051-b034-d0a42ab1fd81",
+            "url": "https://9ee6246f-a67f-4c8b-84aa-243c5fb79508-bluemix.cloudantnosqldb.appdomain.cloud",
+            "username": "9ee6246f-a67f-4c8b-84aa-243c5fb79508-bluemix"
+        },
+        "tag": "WilmanCloudantBD",
+        "dbname": "semillero"
+    }
+}
