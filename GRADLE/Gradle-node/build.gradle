@@ -1,0 +1,15 @@
+buildscript {
+    dependencies {
+        classpath "com.github.node-gradle:gradle-node-plugin:3.0.1"
+    }
+}
+plugins {
+    id "com.github.node-gradle.node" version "3.0.1"
+}
+node {
+	download = false
+}
+
+task showMessage(type:NodeTask, dependsOn:'npmInstall'){
+	script = file('src/index.js')
+}

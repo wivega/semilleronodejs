@@ -27,35 +27,37 @@ console.log('Importing movies into DynamoDB. Please wait.')
 
 var allMovies = JSON.parse(fs.readFileSync('moviedata_copy.json', 'utf8'))
 
-var objJson = JSON.stringify(template)
-let obJson2 = template
-obJson2.RequestItem.Movies.PutRequest = {
-  Item: { '1': 1, '2': 2, '3': 3 }
-}
-
-//console.log(JSON.stringify(obJson2));
+let params = template
 
 //var allMovies = JSON.parse(fs.readFileSync('moviedata.json', 'utf8'))
 
-
-console.log(JSON.stringify(obJson2))
-
-allMovies.forEach(function(movie) {
-    var params = {
-        TableName: "Movies",
+let arrParams = []
+let i = 0
+allMovies.forEach(function (movie) {
+  while (i < 25) {
+    params.RequestItems['Movies'].push({
+      PutRequest: {
         Item: {
-            "year":  movie.year,
-            "title": movie.title,
-            "info":  movie.info
+          year: movie.year,
+          title: movie.title,
+          info: movie.info
         }
-    };
-
-    docClient.put(params, function(err, data) {
-       if (err) {
-           console.error("Unable to add movie", movie.title, ". Error JSON:", JSON.stringify(err, null, 2));
-       } else {
-           console.log("PutItem succeeded:", movie.title);
-       }
-    });
+      }
+    })
+    i++
+  }
+  arrParams.push(params)
+  params = template
+  i = 0
+})
+let k = 0
+arrParams.forEach(itemParam => {
+    docClient.batchWrite(itemParam, function (err, data) {
+        if (err) {
+          console.log('Error', err);
+        } else {
+          console.log('Exito!', data);
+        }
+      });
 });
 

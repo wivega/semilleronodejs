@@ -1,0 +1,7 @@
+{
+	"name": "gradle-example",
+	"version": "1.0.0",
+	"depedencies": {
+		"figlet":"^1.2.0"
+	}
+}
